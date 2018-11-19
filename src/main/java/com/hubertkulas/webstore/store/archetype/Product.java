@@ -8,8 +8,8 @@ public class Product {
 
     private String name;
     private String email;
-    private String adress;
-    private String productType;
+    private String city;
+    private String productCategory;
     private String productId;
     private BigDecimal productPrice;
     private Date date;
@@ -31,20 +31,20 @@ public class Product {
         this.email = email;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getCity() {
+        return city;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public String getProductType() {
-        return productType;
+    public String getProductCategory() {
+        return productCategory;
     }
 
-    public void setProductType(String productType) {
-        this.productType = productType;
+    public void setProductCategory(String productCategory) {
+        this.productCategory = productCategory;
     }
 
     public String getProductId() {
