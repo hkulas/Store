@@ -1,5 +1,8 @@
 package com.hubertkulas.webstore.store.archetype;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,6 +11,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Product {
 
     @Id
@@ -20,6 +24,8 @@ public class Product {
     private String productCategory;
     private String productId;
     private BigDecimal productPrice;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
     private Date date;
     private boolean contact;
 
