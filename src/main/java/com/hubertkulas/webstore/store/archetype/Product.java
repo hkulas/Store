@@ -1,10 +1,18 @@
 package com.hubertkulas.webstore.store.archetype;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.sql.Date;
 
-
+@Entity
 public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
     private String name;
     private String email;
@@ -14,6 +22,7 @@ public class Product {
     private BigDecimal productPrice;
     private Date date;
     private boolean contact;
+
 
     public String getName() {
         return name;
@@ -77,5 +86,15 @@ public class Product {
 
     public void setContact(boolean contact) {
         this.contact = contact;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+
+    // setter for id because Jackson will use it
+    public void setId(long id) {
+        this.id = id;
     }
 }
