@@ -11,23 +11,25 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
-    private String name;
+    private boolean contact;
     private String email;
+    private String category;
+    private String name;
     private String city;
-    private String productCategory;
-    private String productId;
-    private BigDecimal productPrice;
+
+    private String model;
+    private BigDecimal price;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
     private Date date;
-    private boolean contact;
+
 
 
     public String getName() {
@@ -54,28 +56,28 @@ public class Product {
         this.city = city;
     }
 
-    public String getProductCategory() {
-        return productCategory;
+    public String getCategory() {
+        return category;
     }
 
-    public void setProductCategory(String productCategory) {
-        this.productCategory = productCategory;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public String getProductId() {
-        return productId;
+    public String getModel() {
+        return model;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public BigDecimal getProductPrice() {
-        return productPrice;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setProductPrice(BigDecimal productPrice) {
-        this.productPrice = productPrice;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     public Date getDate() {
@@ -94,13 +96,12 @@ public class Product {
         this.contact = contact;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-
     // setter for id because Jackson will use it
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }
