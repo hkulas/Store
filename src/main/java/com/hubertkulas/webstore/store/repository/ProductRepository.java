@@ -1,6 +1,6 @@
-package com.hubertkulas.webstore.store.jparepository;
+package com.hubertkulas.webstore.store.repository;
 
-import com.hubertkulas.webstore.store.archetype.Product;
+import com.hubertkulas.webstore.store.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 //Using Jpa for CRUD operations

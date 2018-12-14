@@ -1,8 +1,8 @@
 package com.hubertkulas.webstore.store.controllers;
 
 
-import com.hubertkulas.webstore.store.archetype.Product;
-import com.hubertkulas.webstore.store.jparepository.ProductRepository;
+import com.hubertkulas.webstore.store.model.Product;
+import com.hubertkulas.webstore.store.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
